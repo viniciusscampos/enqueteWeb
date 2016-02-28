@@ -77,11 +77,18 @@
                     <h2 class="brand-before">
                         <small>Para participar, realize login</small>
                     </h2>
-                    <hr class="tagline-divider">
+                    <hr class="tagline-divider">                    
                     <h2> Login</h2>
-                    <p> Formulario de login<p>
-                        <p>usuário....</p>
-
+                    <div ng-app="myApp" ng-controller="formCtrl">
+                        <form>
+                            Usuário: <br>
+                            <input type="text" ng-model="user.login"><br>
+                            Senha: <br>
+                            <input type="text" ng-model="user.password">
+                            <br><br>
+                            <button ng-click="Login">Entrar</button>
+                        </form> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,6 +121,9 @@
             </div>
         </div>
     </footer>
+
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
