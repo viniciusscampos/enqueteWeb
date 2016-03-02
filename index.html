@@ -72,24 +72,47 @@
 
         <div class="row">
             <div class="box">
-                <div class="col-lg-12 text-center">
-                    
-                    <h2 class="brand-before">
-                        <small>Para participar, <strong>realize login</strong>. || Não é cadastrado? <a href="cadastro.html">Realizar cadastro</a></small>
-                    </h2>
-                    <hr class="tagline-divider">                    
-                    <h3> Login</h3>
-                    <div ng-app="myApp" ng-controller="formCtrl">
-                        <form>
-                            Usuário: <br>
-                            <input type="text" ng-model="user.login"><br>
-                            Senha: <br>
-                            <input type="text" ng-model="user.password">
-                            <br><br>
-                            <button ng-click="entrar()">Entrar</button>
-                            <img src="img/facebook.png" ng-click="facebook()"/>                            
-                        </form> 
-                    </div>
+                <div class="col-lg-12 text-center">                    
+                    <div ng-app="myApp">
+                        <h2 class="brand-before">
+                        <small>Para participar,<a href="" ng-click="showme=false">realize seu login</a>. || Não é cadastrado? <a href="" ng-click="showme=true">Realize seu cadastro!</a> 
+                        </h2>                                                
+                        <div class="wrapper">
+                            <div ng-hide="showme">
+                                <h3> Login</h3>
+                                <div ng-app="myApp" ng-controller="formCtrl">
+                                <form>
+                                    Usuário: <br>
+                                    <input type="text" ng-model="user.login"><br>
+                                    Senha: <br>
+                                    <input type="text" ng-model="user.password">
+                                    <br><br>
+                                    <button ng-click="entrar()">Entrar</button>
+                                    <img src="img/facebook.png" ng-click="facebook()"/>                            
+                                </form> 
+                                </div>
+                            </div>                            
+                            <div ng-show="showme">
+                                <h3>Formulário de cadastro</h3>
+                                 <div ng-app="myApp" ng-controller="formCtrl">
+                                    <form>
+                                        Nome Completo: <br>
+                                        <input type="text" ng-model="user.name"><br>
+                                        Login: <br>
+                                        <input type="text" ng-model="user.login"><br>                            
+                                        E-mail: <br>
+                                        <input type="text" ng-model="user.email"><br>
+                                        CPF: <br>
+                                        <input type="text" ng-model="user.cpf"><br>
+                                        Senha: <br>
+                                        <input type="text" ng-model="user.password">
+                                        <br><br>
+                                        <button ng-click="registrar()">Registrar</button>                                                    
+                                    </form>                         
+                                </div>
+                            </div>
+                        </div>                                            
+                    <hr class="tagline-divider">                                        
                 </div>
             </div>
         </div>
@@ -102,8 +125,21 @@
                         <strong>Nome da enquete ativa</strong>
                     </h2>
                     <hr>
+                    <div ng-app="myApp" ng-controller="ExampleController">                    
+                        <form>
+                            <label>
+                                <input type="radio" ng-model="resposta.valor" value="sim">
+                                Sim
+                            </label></br>
+                            <label>
+                                <input type="radio" ng-model="resposta.valor" value="nao">
+                                Não
+                            </label></br>                                                        
+                            <button ng-click="enviar()">Enviar</button>                                      
+                        </form>    
+                    </div>                     
                     <p>ENQUETE</p>
-                    <p>OPCOEEEEES</p>
+                    <p>Opções</p>               
                 </div>
             </div>
         </div>
@@ -125,6 +161,7 @@
 
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/apk.js"></script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
