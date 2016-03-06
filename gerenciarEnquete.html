@@ -50,11 +50,8 @@
                 <a class="navbar-brand" href="index.html">Business Casual</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Atualizar dados
                             <ul class="dropdown-menu">
@@ -64,9 +61,6 @@
                             </ul>
                     </li>
                     <li>
-                        <a href="enquete.html">Enquete</a>
-                    </li>
-                    <li>
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gerenciar Enquete
                             <ul class="dropdown-menu">
                                 <li><a href="#"> Desativar enquete </a></li>
@@ -74,6 +68,14 @@
                                 <li><a href="#"> Cancelar enquete </a></li>
                                 <li><a href="#"> Adicionar imagem</a></li>
                             </ul>
+                    </li>
+                    <li>
+                        <a href="index.html">Criar enquete</a>
+                    </li>
+                    <li>
+                        <div ng-app="myApp" ng-controller="appCtrl">
+                            <a ng-click="logout()">Logout</a>
+                        </div>                        
                     </li>
                 </ul>
             </div>
@@ -123,7 +125,6 @@
 
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/apk.js"></script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

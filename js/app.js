@@ -20,4 +20,15 @@ app.controller('appCtrl', function($scope,$window){
 		//enviará o formulário de respostas
 		console.log("Enviado com sucesso!");
 	};	
+	$scope.logout = function(){
+		//realizará o logout do usuário do sistema
+		console.log("Logout!");
+	};	
+	$scope.alternativas = [];
+	$scope.addAnswer = function (){
+		$scope.alternativas.push({value:''});
+	}
+	$scope.uploadImage = function (){
+		console.log("oi");
+	}
 });
