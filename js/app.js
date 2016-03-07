@@ -1,17 +1,23 @@
 var app= angular.module('myApp',[]);
-app.controller('appCtrl', function($scope,$window){	
+app.controller('appCtrl', function($scope,$window){
+	$scope.users = [];
+	$scope.newUser = {};	
+	$scope.logingUser = {};
 	$scope.entrar = function(){
 		//realizará o login pelo site
 		$scope.user = angular.copy($scope.master);
 		$window.location.href='usuario.html';		
 	};	
+	$scope.registraUsuario = function(){
+		//realizará o cadastro
+		if($scope.newUser.nome && $scope.newUser.login && $scope.newUser.email && $scope.newUser.cpf && $scope.newUser.senha ){
+			$scope.users.push({"nome": $scope.newUser.nome, "login": $scope.newUser.login, "email": $scope.newUser.email, "cpf": $scope.newUser.cpf, "senha": $scope.newUser.senha});
+			$scope.isAddForm = false;			
+		}
+	};
 	$scope.facebook = function(){
 		//realizará o login pelo facebook e caso seja a primeira vez do usuário pedirá que ele adicione o cpf para completar o cadastro
 		console.log("facebook");
-	};
-	$scope.registrar = function(){
-		//realizará o cadastro
-		console.log("cadastrado com sucesso")
 	};
 	$scope.resposta = {
 		valor: 'sim'
@@ -20,15 +26,4 @@ app.controller('appCtrl', function($scope,$window){
 		//enviará o formulário de respostas
 		console.log("Enviado com sucesso!");
 	};	
-	$scope.logout = function(){
-		//realizará o logout do usuário do sistema
-		console.log("Logout!");
-	};	
-	$scope.alternativas = [];
-	$scope.addAnswer = function (){
-		$scope.alternativas.push({value:''});
-	}
-	$scope.uploadImage = function (){
-		console.log("oi");
-	}
 });

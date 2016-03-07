@@ -84,38 +84,16 @@
         <!-- /.container -->
     </nav>
 
-<div class="row">
-    <div class="box">
-        <div class="col-lg-12 text-center">                    
-            <div ng-app="myApp" ng-controller="appCtrl">
-                <form>
-                    <label>Pergunta:</label>
-                    <br>
-                    <input type="text" ng-model="enquete.pergunta" size='40'><br>
-                    <label>Alternativas:</label><br>
-                    <div ng-repeat="alternativa in alternativas">
-                        <input ng-model="alternativa.value" type="text" size='40'>
-                    </div>                            
-                    <br>   
-                    <button ng-click="addAnswer()"> + Adicionar alternativa</button>   
-                    <br>                                   
-                    <label>Duração:</label>
-                    <br>
-                    <input type="text" ng-model="enquete.duracao" size='40'><br>
-                    <label>Selecione uma imagem:</label>
-                    <br>
-                    <input type="file" file-model="myFile">
-                    <br>
-                    <button ng-click="uploadImage()">Enviar imagem</button>                                                  
-                    <br><br>
-                    <button ng-click="submeteEnquete()">Submeter</button>  
-                    <br><br>                                                  
-                </form>                                              
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12 text-center">
+                                                                                      
             </div>
         </div>
     </div>
 </div>
-    <!-- /.container -->
+<!-- /.container -->
     <footer>
         <div class="container">
             <div class="row">
@@ -129,7 +107,7 @@
     </footer>
 
     <script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/enquete.js"></script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
