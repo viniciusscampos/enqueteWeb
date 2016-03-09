@@ -26,4 +26,7 @@ app.controller('appCtrl', function($scope,$window){
 		//enviará o formulário de respostas
 		console.log("Enviado com sucesso!");
 	};	
+	$scope.logout = function (){
+		console.log("logout");
+	};
 });

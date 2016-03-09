@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myEnquete">
 
 <head>
 
@@ -30,7 +30,7 @@
 
 </head>
 
-<body>
+<body ng-controller="EnqueteController">
 
     <div class="brand">EnqueteWeb</div>
     <div class="address-bar">Engenharia de Software - 2015.2 - UFRJ</div>
@@ -73,7 +73,7 @@
                         <a href="index.html">Criar enquete</a>
                     </li>
                     <li>
-                        <div ng-app="myApp" ng-controller="appCtrl">
+                        <div>
                             <a ng-click="logout()">Logout</a>
                         </div>                        
                     </li>
@@ -84,43 +84,68 @@
         <!-- /.container -->
     </nav>
 
-<div class="container">
-    <div class="row">
-        <div class="box">
-            <div class="col-lg-12 text-center">
-                                                                                      
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /.container -->
-    <footer>
-        <div class="container">
-            <div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="box">
                 <div class="col-lg-12 text-center">
-                    <h4><small>UFRJ - Engenharia de Software 2015.2
+                    <form>
+                        <label>Pergunta:</label>
                         <br>
-                     <b>Grupo I : </b>Diego Cruz, Patrícia Kovaleski, Victor Cardoso e Vinícius Campos </small></h4>
+                        <input type="text" ng-model='novaEnquete.pergunta' size='40'><br>
+                        <label>Alternativas:</label><br>
+                        <div ng-repeat="value in alternativas track by $index">
+                            <input type="text" ng-model="$parent.alternativas[$index]" size='40'>
+                        </div>                            
+                        <br>   
+                        <button ng-click="adicionaAlternativa()"> + Adicionar alternativa</button>
+                        <button ng-click="removeAlternativa()"> + Remover alternativa</button>    
+                        <br>                                   
+                        <label>Duração:</label>
+                        <br>
+                        <input type="text" ng-model="novaEnquete.duracao" size='40'><br>
+                        <label>Selecione uma imagem:</label>
+                        <br>
+                        <div align="center">
+                            <input type="file" file-model="myFile">
+                        </div>
+                        <br>
+                        <button ng-click="uploadImage()">Enviar imagem</button>                                                  
+                        <br><br>
+                        <button ng-click="cadastraEnquete()">Submeter</button>  
+                        <br><br>                                                  
+                    </form>          
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+    <!-- /.container -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h4><small>UFRJ - Engenharia de Software 2015.2
+                            <br>
+                         <b>Grupo I : </b>Diego Cruz, Patrícia Kovaleski, Victor Cardoso e Vinícius Campos </small></h4>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-    <script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="js/enquete.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/enquete.js"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
+        <!-- Script to Activate the Carousel -->
+        <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+        </script>
 
 </body>
 
