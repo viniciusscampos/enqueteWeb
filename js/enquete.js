@@ -24,9 +24,11 @@ angular.module('myEnquete',[]).controller('EnqueteController', function($scope){
 		$scope.alternativas.push("");			
 	};
 
-	$scope.removeAlternativa = function () {		
-		$scope.alternativas.pop();
-		count --;	
+	$scope.removeAlternativa = function () {
+		if(count>2){		
+			$scope.alternativas.pop();
+			count --;	
+		}
 	};
 
 });
