@@ -70,7 +70,7 @@
                             </ul>
                     </li>
                     <li>
-                        <a href="index.html">Criar enquete</a>
+                        <a href="enquete.html">Criar enquete</a>
                     </li>
                     <li>
                         <div>
@@ -97,12 +97,13 @@
                             <input type="text" ng-model="$parent.alternativas[$index]" size='40'>
                         </div>                            
                         <br>   
-                        <button ng-click="adicionaAlternativa()"> + Adicionar alternativa</button>
-                        <button ng-click="removeAlternativa()"> + Remover alternativa</button>    
-                        <br>                                   
+                        <button ng-click="adicionaAlternativa()">Adicionar alternativa</button>
+                        <button ng-click="removeAlternativa()">Remover alternativa</button>    
+                        <br><br>                                   
                         <label>Duração:</label>
                         <br>
-                        <input type="text" ng-model="novaEnquete.duracao" size='40'><br>
+                        <input type="text" ng-model="novaEnquete.duracao" size='40'>
+                        <br><br>
                         <label>Selecione uma imagem:</label>
                         <br>
                         <div align="center">
@@ -110,6 +111,9 @@
                         </div>
                         <br>
                         <button ng-click="uploadImage()">Enviar imagem</button>                                                  
+                        <br><br>                        
+                        <input type="checkbox" ng-model="novaEnquete.ordem">
+                        <label>Marque se deseja manter a ordem das alternativas</label>
                         <br><br>
                         <button ng-click="cadastraEnquete()">Submeter</button>  
                         <br><br>                                                  

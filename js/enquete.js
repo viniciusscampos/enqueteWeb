@@ -10,11 +10,7 @@ angular.module('myEnquete',[]).controller('EnqueteController', function($scope){
 	};
 
 	$scope.cadastraEnquete = function () {		
-		if($scope.novaEnquete.pergunta && $scope.novaEnquete.alternativas && $scope.novaEnquete.duracao){
-			$scope.enquetes.push({"pergunta": $scope.novaEnquete.pergunta, "alternativas": $scope.alternativas, "duracao": $scope.novaEnquete.duracao, "imagem": $scope.novaEnquete.imagem});
-			$scope.isAddForm = false;			
-		}
-		$scope.enquetes.push({"pergunta": $scope.novaEnquete.pergunta, "alternativas": $scope.novaEnquete.alternativas, "duracao": $scope.novaEnquete.duracao, "imagem": $scope.novaEnquete.imagem});
+			$scope.enquetes.push({"pergunta": $scope.novaEnquete.pergunta, "alternativas": $scope.alternativas, "duracao": $scope.novaEnquete.duracao, "imagem": $scope.novaEnquete.imagem, "ordem":$scope.novaEnquete.ordem});
 		console.log($scope.enquetes);
 	};
 
