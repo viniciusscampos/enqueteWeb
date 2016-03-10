@@ -91,10 +91,10 @@
                     <form>
                         <label>Pergunta:</label>
                         <br>
-                        <input type="text" ng-model='novaEnquete.pergunta' size='40'><br>
+                        <input class="form-control" type="text" ng-model='novaEnquete.pergunta' size='40'><br>
                         <label>Alternativas:</label><br>
                         <div ng-repeat="value in alternativas track by $index">
-                            <input type="text" ng-model="$parent.alternativas[$index]" size='40'>
+                            <input class="form-control" type="text" ng-model="$parent.alternativas[$index]" size='40'>
                         </div>                            
                         <br>   
                         <button ng-click="adicionaAlternativa()">Adicionar alternativa</button>
@@ -102,7 +102,7 @@
                         <br><br>                                   
                         <label>Duração:</label>
                         <br>
-                        <input type="text" ng-model="novaEnquete.duracao" size='40'>
+                        <input class="form-control" type="text" ng-model="novaEnquete.duracao" size='40'>
                         <br><br>
                         <label>Selecione uma imagem:</label>
                         <br>
