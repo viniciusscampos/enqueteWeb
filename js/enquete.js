@@ -4,6 +4,7 @@ angular.module('myEnquete',[]).controller('EnqueteController', function($scope){
 	$scope.enquetes = [];
 	$scope.novaEnquete = {};
 	$scope.alternativas = ['a','b'];
+	$scope.hiddenValue = true;
 
 	$scope.logout = function (){
 		console.log("logout");
@@ -25,6 +26,10 @@ angular.module('myEnquete',[]).controller('EnqueteController', function($scope){
 			$scope.alternativas.pop();
 			count --;	
 		}
+	};
+
+	$scope.selected = function () {
+		$scope.selected = false;
 	};
 
 });

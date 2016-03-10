@@ -63,14 +63,14 @@
                     <li>
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gerenciar Enquete
                             <ul class="dropdown-menu">
-                                <li><a href="#"> Desativar enquete </a></li>
-                                <li><a href="#"> Reativar enquete </a></li>
-                                <li><a href="#"> Cancelar enquete </a></li>
-                                <li><a href="#"> Adicionar imagem</a></li>
+                                <li><a href="gerenciarEnquete.html" ng-click="selected()"> Desativar enquete </a></li>
+                                <li><a href="gerenciarEnquete.html"> Reativar enquete </a></li>
+                                <li><a href="gerenciarEnquete.html"> Cancelar enquete </a></li>
+                                <li><a href="gerenciarEnquete.html"> Adicionar imagem</a></li>
                             </ul>
                     </li>
                     <li>
-                        <a href="index.html">Criar enquete</a>
+                        <a href="enquete.html">Criar enquete</a>
                     </li>
                     <li>
                         <div ng-app="myApp" ng-controller="appCtrl">
@@ -103,9 +103,131 @@
                             </br>                                                        
                             <button ng-click="enviar()">Enviar</button>                                      
                         </form>    
-                    </div>                                                     
+                    </div>  
+                    <div ng-hide="hiddenValue" class="ng-hide">
+                        <p>testando</p>
+                    </div>                                                   
                 </div>
             </div>
+
+             <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Desativar enquete</strong>
+                    </h2>
+                    <hr>
+                    <div ng-app="myApp" ng-controller="appCtrl" class="intro-text text-center">                    
+                        <form>
+                            <h5>Deseja desativar a atual enquete ativa?</h5>
+                            <br>
+                            <h4>Nome da enquete ativa</h4>
+                            <label>Sim</label>
+                            <input type="radio" ng-model="resposta.valor" value="sim"> ||
+                            <label>Não</label>
+                            <input type="radio" ng-model="resposta.valor" value="nao">
+                            </br></br>                                                     
+                            <button ng-click="enviar()">Enviar</button>                                      
+                        </form>    
+                    </div>  
+                    <div ng-hide="hiddenValue" class="ng-hide">
+                        <p>testando</p>
+                    </div>                                                   
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Reativar enquete</strong>
+                    </h2>
+                    <hr>
+                    <div ng-app="myApp" ng-controller="appCtrl" class="intro-text text-center">
+                        <h4>Lista de enquetes desativadas</h4>
+                    </div>
+                    <div ng-app="myApp" ng-controller="appCtrl" class="intro-text text-center">                    
+                        <form>
+                        </br>
+                        <h5>Deseja reativar a enquete selecionada?</h5>
+                            <label>Sim</label>
+                            <input type="radio" ng-model="resposta.valor" value="sim"> ||
+                            <label>Não</label>
+                            <input type="radio" ng-model="resposta.valor" value="nao">
+                            </br>                                                        
+                            <button ng-click="enviar()">Enviar</button>                                      
+                        </form>    
+                    </div>  
+                    <div ng-hide="hiddenValue" class="ng-hide">
+                        <p>testando</p>
+                    </div>                                                   
+                </div>
+            </div>
+
+             <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Cancelar enquete</strong>
+                    </h2>
+                    <hr>
+                    <div ng-app="myApp" ng-controller="appCtrl" class="intro-text text-center">
+                        <h4>Lista de enquetes criadas pelo autor</h4>
+                    </div>
+                    <div ng-app="myApp" ng-controller="appCtrl" class="intro-text text-center">                    
+                        <form>
+                        </br>
+                        <h5>Deseja cancelar a enquete selecionada?</h5>
+                            <label>Sim</label>
+                            <input type="radio" ng-model="resposta.valor" value="sim"> ||
+                            <label>Não</label>
+                            <input type="radio" ng-model="resposta.valor" value="nao">
+                            </br>                                                        
+                            <button ng-click="enviar()">Enviar</button>                                      
+                        </form>    
+                    </div>  
+                    <div ng-hide="hiddenValue" class="ng-hide">
+                        <p>testando</p>
+                    </div>                                                   
+                </div>
+            </div>
+
+             <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Adição de imagem à enquete</strong>
+                    </h2>
+                    <hr>
+                    <div ng-app="myApp" ng-controller="appCtrl" class="intro-text text-center">
+                        <h5>Selecione uma imagem:</h5>
+                    </br>
+                        <div align="center">
+                            <input type="file" file-model="myFile">
+                        </div>
+                    </br>
+                        <button ng-click="uploadImage()">Enviar imagem</button>
+                    </br><br><br>
+                    <div ng-app="myApp" ng-controller="appCtrl" class="intro-text text-center">
+                        <h4>Lista de enquetes criadas pelo autor</h4>
+                    </div>                 
+                        <form>
+                        </br>
+                        <h5>Deseja reativar a enquete selecionada?</h5>
+                            <label>Sim</label>
+                            <input type="radio" ng-model="resposta.valor" value="sim"> ||
+                            <label>Não</label>
+                            <input type="radio" ng-model="resposta.valor" value="nao">
+                            </br>                                                        
+                            <button ng-click="enviar()">Enviar</button>                                      
+                        </form>    
+                    </div>  
+                    <div ng-hide="hiddenValue" class="ng-hide">
+                        <p>testando</p>
+                    </div>                                                   
+                </div>
+            </div>
+
         </div>
 
     </div>
