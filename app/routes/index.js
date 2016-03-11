@@ -3,7 +3,7 @@ var api = require('../api'),
 
 module.exports  = function(app) {
     
-    app.route('/v1/fotos')
+    app.route('/usuarios/novousuario')
         .post(api.adiciona)
         .get(api.lista);
 

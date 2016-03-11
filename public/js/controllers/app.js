@@ -1,4 +1,4 @@
-angular.module('enqueteweb').controller('appCtrl', function($scope, $window) {
+angular.module('enqueteweb').controller('appCtrl', function($scope, $http) {
 	//app
 	$scope.users = [];
 	$scope.newUser = {};	
@@ -23,8 +23,8 @@ angular.module('enqueteweb').controller('appCtrl', function($scope, $window) {
 
 	$scope.entrar = function(){
 		//realizará o login pelo site
-		$scope.user = angular.copy($scope.master);
-		$window.location.href='/usuario';		
+		$http.post('usuarios/novousuario',$scope.)		
+		//$window.location.href='/usuario';		
 	};	
 	$scope.registraUsuario = function(){
 		//realizará o cadastro
