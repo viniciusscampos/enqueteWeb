@@ -36,6 +36,11 @@ angular.module('enqueteweb', ['minhasDiretivas','ngAnimate', 'ngRoute', 'ngResou
 		$routeProvider.when('/criarenquete', {
 			templateUrl: 'partials/criarEnquete.html',
 			controller: 'appCtrl'
+		});
+
+		$routeProvider.when('/adm', {
+			templateUrl: 'partials/adm.html',
+			controller: 'appCtrl'
 		});	
 
 

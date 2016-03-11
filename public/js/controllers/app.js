@@ -22,6 +22,11 @@ angular.module('enqueteweb').controller('appCtrl', function($scope, $http) {
 	$scope.alternativas = ['',''];
 	//
 
+	//Recrutar usuarios
+	$scope.emailsRecrutamento = ['',''];
+	$scope.recrutamento = [];
+	//
+
 	$scope.entrar = function(){
 		//realizará o login pelo site
 		//$http.post('usuarios/novousuario',$scope.logingUser)		
@@ -51,6 +56,7 @@ angular.module('enqueteweb').controller('appCtrl', function($scope, $http) {
 	$scope.enviar = function(){
 		//enviará o formulário de respostas
 		console.log("Enviado com sucesso!");
+		console.log($scope.emailsRecrutamento);	
 	};	
 	$scope.logout = function (){
 		console.log("logout");
@@ -110,6 +116,19 @@ angular.module('enqueteweb').controller('appCtrl', function($scope, $http) {
 			$scope.alternativas.pop();
 			count --;	
 		}
+	};
+
+	$scope.adicionaEmail = function () {
+		$scope.emailsRecrutamento.push("");			
+	};
+
+	$scope.removeEmail = function () {
+		$scope.emailsRecrutamento.pop();
+	};
+
+	$scope.recrutaUsuario = function () {		
+		//recrutar os usuarios pelos emails
+		$scope.recrutamento.push({"emails":$scope.emailsRecrutamento});
 	};
 
 	$scope.selected = function () {
