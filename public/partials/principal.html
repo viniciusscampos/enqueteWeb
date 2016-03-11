@@ -72,56 +72,53 @@
                         <div ng-show="showme">
                             <h3>Formulário de cadastro</h3>
                              <div>
-                                <form name="formulario" novalidate ng-submit="registraUsuario()">
+                                <form name="formularioc" novalidate ng-submit="registraUsuario()">
                                     <div class="form-group">
                                         <label>Nome Completo:</label>
                                         <input class="form-control" name="nome" ng-model="newUser.nome" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Login:</label>
-                                        <input class="form-control" name="login" ng-model="newUser.login" required ng-maxlength="20" ng-minlength="8">
-                                        <span ng-show="formulario.$submitted && formulario.login.$error.required" class="form-control alert-danger">
-                                            Login obrigatório
-                                        </span>
-                                        <span ng-show="formulario.$submitted && formulario.login.$error.manlength" class="form-control alert-danger">
+                                        <input class="form-control" name="login" ng-model="newUser.login" required ng-maxlength="20" ng-minlength="8">                                        
+                                        <span ng-show="formularioc.$submitted && formularioc.login.$error.manlength" class="form-control alert-danger">
                                             O login deve ter no máximo 25 caracteres
                                         </span>
-                                        <span ng-show="formulario.$submitted && formulario.login.$error.minlength" class="form-control alert-danger">
+                                        <span ng-show="formularioc.$submitted && formularioc.login.$error.minlength" class="form-control alert-danger">
                                             O login deve ter no mínimo 8 caracteres
                                         </span>
                                     </div>     
                                     <div class="form-group">                      
                                         <label>E-mail:</label>
                                         <input class="form-control" name="email" ng-model="newUser.email" required>
-                                        <span ng-show="formulario.$submitted && formulario.email.$error.required" class="form-control alert-danger">
+                                        <span ng-show="formularioc.$submitted && formularioc.email.$error.required" class="form-control alert-danger">
                                             E-mail obrigatório
                                         </span>
                                     </div>
                                     <div class="form-group">
                                         <label>CPF:</label>
                                         <input class="form-control" name="cpf" ng-model="newUser.cpf" required ng-maxlength="11" ng-minlength="11">
-                                        <span ng-show="formulario.$submitted && formulario.cpf.$error.maxlength" class="form-control alert-danger">
+                                        <span ng-show="formularioc.$submitted && formularioc.cpf.$error.maxlength" class="form-control alert-danger">
                                             O cpf deve conter 11 digitos
                                         </span>
-                                        <span ng-show="formulario.$submitted && formulario.cpf.$error.minlength" class="form-control alert-danger">
+                                        <span ng-show="formularioc.$submitted && formularioc.cpf.$error.minlength" class="form-control alert-danger">
                                             O cpf deve conter 11 digitos
                                         </span>
                                     </div>
                                     <div class="form-group">
                                         <label>Senha:</label>
-                                        <input class="form-control" name="senha" ng-model="newUser.senha" required ng-maxlength="20" ng-minlength="8">
-                                        <span ng-show="formulario.$submitted && formulario.senha.$error.required" class="form-control alert-danger">
-                                            Senha obrigatória
-                                        </span>
-                                        <span ng-show="formulario.$submitted && formulario.senha.$error.maxlength" class="form-control alert-danger">
+                                        <input class="form-control" name="senha" ng-model="newUser.senha" required ng-maxlength="20" ng-minlength="8">                                        
+                                        <span ng-show="formularioc.$submitted && formularioc.senha.$error.maxlength" class="form-control alert-danger">
                                             A senha deve conter no máximo 20 caracteres
                                         </span>
-                                        <span ng-show="formulario.$submitted && formulario.senha.$error.minlength" class="form-control alert-danger">
+                                        <span ng-show="formularioc.$submitted && formularioc.senha.$error.minlength" class="form-control alert-danger">
                                             A senha deve conter no mínimo 8 caracteres
                                         </span>
                                     </div>
-                                    <button ng-type="submit" class="btn btn-primary">Registrar</button>                                                    
-                                </form>                         
+                                    <button ng-type="submit" class="btn btn-primary" ng-disabled="formularioc.$invalid">Registrar</button>                                                    
+                                </form>
+                                <div ng-show="mensagemCadastro.length" class="alert alert-sucess">
+                                    {{mensagemCadastro}}
+                                </div>                         
                             </div>
                         </div>
                     </div>                                            

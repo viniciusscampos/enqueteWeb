@@ -3,6 +3,7 @@ angular.module('enqueteweb').controller('appCtrl', function($scope, $http) {
 	$scope.users = [];
 	$scope.newUser = {};	
 	$scope.logingUser = {};
+	$scope.mensagemCadastro = '';
 	//
 
 	//cadastro
@@ -23,14 +24,21 @@ angular.module('enqueteweb').controller('appCtrl', function($scope, $http) {
 
 	$scope.entrar = function(){
 		//realizará o login pelo site
-		$http.post('usuarios/novousuario',$scope.)		
+		//$http.post('usuarios/novousuario',$scope.logingUser)		
 		//$window.location.href='/usuario';		
 	};	
 	$scope.registraUsuario = function(){
 		//realizará o cadastro
-		if($scope.newUser.nome && $scope.newUser.login && $scope.newUser.email && $scope.newUser.cpf && $scope.newUser.senha ){
-			$scope.users.push({"nome": $scope.newUser.nome, "login": $scope.newUser.login, "email": $scope.newUser.email, "cpf": $scope.newUser.cpf, "senha": $scope.newUser.senha});
-			$scope.isAddForm = false;			
+		if($scope.formularioc.$valid){
+			$http.post('usuarios/novousuario',$scope.newUser)
+			.success(function (){
+				$scope.newUser = {};
+				$scope.mensagemCadastro = 'Usuario cadastrado com sucesso';
+			})
+			.error(function(erro){
+				$scope.mensagemCadastro = 'Não foi possível cadastrar o usuário';
+			})
+			$scope.formularioc.$submitted = false;
 		}
 	};
 	$scope.facebook = function(){
