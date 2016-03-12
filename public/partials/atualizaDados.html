@@ -1,0 +1,120 @@
+<div class="brand">EnqueteWeb</div>
+<div class="address-bar">Engenharia de Software - 2015.2 - UFRJ</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+            <a class="navbar-brand" href="index.html">Business Casual</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Atualizar dados
+                        <ul class="dropdown-menu">
+                            <li><a ng-click="formNome()" href="/altualizadados"> Alterar nome </a></li>
+                            <li><a ng-click="formEmail()" href="/atualizadados"> Alterar e-mail </a></li>
+                            <li><a ng-click="formSenha()" href ="/atualizadados"> Alterar senha </a></li>
+                        </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gerenciar Enquete
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> Desativar enquete </a></li>
+                            <li><a href="#"> Reativar enquete </a></li>
+                            <li><a href="#"> Cancelar enquete </a></li>
+                            <li><a href="#"> Adicionar imagem</a></li>
+                        </ul>
+                </li>
+                <li>
+                    <a href="/criarenquete">Criar enquete</a>
+                </li>
+                <li>
+                    <div>
+                        <a ng-click="logout()">Logout</a>
+                    </div>                        
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<div class="container">    
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12 text-center">
+                <!--<h2 class="intro-text text-center">-->
+                    <div class="wrapper">                         
+                        <h3>Alteração de Cadastro</h3>
+                         <div ng-show="altEmail">
+                            <form>
+                                <br><br>
+                                <label>Novo e-mail:</label>
+                                <br>
+                                <input class="form-control" type="text" ng-model="novoEmail.email"><br>
+                                <br>
+                                <label>Confirme o novo e-mail:</label>
+                                <br>
+                                <input class="form-control" type="text" ng-model="novoEmail.confEmail">
+                                <br><br>
+                                <button ng-click="alteraEmailUsuario()" class="btn btn-primary">Salvar</button>                                                    
+                            </form>                         
+                        </div>
+                        <div ng-show="altNome">
+                            <form>                                    
+                                <label>Novo nome:</label>
+                                <br>
+                                <input class="form-control" type="text" ng-model="novoNomeUsuario.nome">
+                                <br><br>
+                                <button ng-click="alteraNomeUsuario()" class="btn btn-primary">Salvar</button>                                                    
+                            </form>   
+                        </div>
+                        <div ng-show="altSenha">
+                            <form>                                    
+                                <form>
+                                    <br><br>
+                                    <label>Senha antiga:</label>
+                                    <br>
+                                    <input class="form-control" type="text" ng-model="novaSenhaUsuario.senhaAntiga"><br>
+                                    <br>
+                                    <label>Nova senha:</label>
+                                    <br>
+                                    <input class="form-control" type="text" ng-model="novaSenhaUsuario.novaSenha"><br>
+                                    <br>
+                                    <label>Confirme a nova senha:</label>
+                                    <br>
+                                    <input class="form-control" type="text" ng-model="user.confirmaNovaSenha">
+                                    <br><br>
+                                    <button ng-click="alteraSenhaUsuario()" class="btn btn-primary">Salvar</button>
+                                </form>                                                           
+                            </form>   
+                        </div>
+                    </div>    
+                <!--</h2>                            -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h4><small>UFRJ - Engenharia de Software 2015.2
+                    <br>
+                 <b>Grupo I : </b>Diego Cruz, Patrícia Kovaleski, Victor Cardoso e Vinícius Campos </small></h4>
+            </div>
+        </div>
+    </div>
+</footer>
